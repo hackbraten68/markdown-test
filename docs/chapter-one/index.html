@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="UTF-8"><title>Kapitel 1</title></head>
+  <body>
+    <h1>Kapitel 1</h1>
+    <div id="content"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      fetch('test.md')
+        .then(response => response.text())
+        .then(text => {
+          document.getElementById('content').innerHTML = marked.parse(text);
+        });
+    </script>
+  </body>
+</html>
